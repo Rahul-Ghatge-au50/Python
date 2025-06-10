@@ -1,5 +1,2 @@
-New Updated List
-There is new Todo
-I can see it  OK done
-Something is wrong
-I can see it Yes 
+Hello
+Ok I got it
