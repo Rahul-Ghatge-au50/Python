@@ -1,13 +1,18 @@
 import function
 import FreeSimpleGUI as sg
 import time
+import os
+
+if not os.path.exists('todos.txt'):
+    with open('todos.txt', 'w') as file:
+        pass
 
 sg.theme("Black")
 
 """Adding the todos"""
 label = sg.Text("Type in a To-Do")
 input_box = sg.InputText(tooltip="Enter Todo", key="todo")
-add_button = sg.Button("Add")
+add_button = sg.Button("Add", mouseover_colors="LightBlue2", tooltip="Add", key="Add")
 
 clock = sg.Text("", key="clock")
 
@@ -21,7 +26,7 @@ comp_btn = sg.Button("Complete")
 exit_btn = sg.Button("Exit")
 
 window = sg.Window('My To-Do App',
-                   layout=[[clock], [label], [input_box, add_button], [todo_list, edit_button, comp_btn],[exit_btn]],
+                   layout=[[clock], [label], [input_box, add_button], [todo_list, edit_button, comp_btn], [exit_btn]],
                    font=('Helvetica', 16))
 
 
